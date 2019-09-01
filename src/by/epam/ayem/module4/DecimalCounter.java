@@ -1,15 +1,15 @@
-/*5. Опишите класс, реализующий десятичный счетчик, который может увеличивать или уменьшать свое значение
+package by.epam.ayem.module4;/*5. Опишите класс, реализующий десятичный счетчик, который может увеличивать или уменьшать свое значение
 на единицу в заданном диапазоне. Предусмотрите инициализацию счетчика значениями по умолчанию и
 произвольными значениями. Счетчик имеет методы увеличения и уменьшения состояния, и метод, позволяющий
 получить его текущее состояние. Написать код, демонстрирующий все возможности класса.*/
 
-public class DecimalCounter {
+class DecimalCounter {
 
-    private int upLimit = 50;
-    private int downLimit = 0;
-    private int currentValue = 0;
+    private int upLimit;
+    private int downLimit;
+    private int currentValue;
 
-    public DecimalCounter(int upLimit, int downLimit, int currentValue) {
+    DecimalCounter(int upLimit, int downLimit, int currentValue) {
         if (upLimit <= 10) {
             System.out.println("Up limit can not be lower than 10. The up limit has been set up as 10");
             this.upLimit = 10;
@@ -42,7 +42,7 @@ public class DecimalCounter {
         }
     }
 
-    public void increaseValue() {
+    void increaseValue() {
         if (currentValue < upLimit) {
             currentValue++;
             System.out.println("Current value has been increased by 1. Current value = " + currentValue + ".");
@@ -52,7 +52,7 @@ public class DecimalCounter {
         }
     }
 
-    public void decreaseValue() {
+    void decreaseValue() {
         if (currentValue > downLimit) {
             currentValue--;
             System.out.println("Current value has been decreased by 1. Current value = " + currentValue + ".");
@@ -62,7 +62,7 @@ public class DecimalCounter {
         }
     }
 
-    public void getCurrentValue() {
+    void getCurrentValue() {
         System.out.println("Current value of the decimal counter = " + currentValue);
 //        System.out.println("Down limit of the decimal counter = " + downLimit);
 //        System.out.println("Up limit of the decimal counter = " + upLimit);

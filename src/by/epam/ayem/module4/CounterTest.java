@@ -1,3 +1,5 @@
+package by.epam.ayem.module4;
+
 public class CounterTest {
 
     public static void main(String[] args) {
